@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from "react-query";
-import { GameQuery } from "../App";
+import { GameQuery } from "../store";
 import { Platform } from "./usePlatforms";
 import APIClient, { FetchResponse } from "../services/api-client";
 

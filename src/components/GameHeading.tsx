@@ -5,9 +5,9 @@ import useGenre from "../hooks/useGenre";
 
 const GameHeading = () => {
   const platformId = useGameQueryStore((s) => s.gameQuery.platformId);
-  const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
-
   const selectedPlatform = usePlatform(platformId);
+
+  const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
   const selectedGenre = useGenre(genreId);
 
   const heading = `${selectedPlatform?.name || ""} ${

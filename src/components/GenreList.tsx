@@ -12,8 +12,8 @@ import getCroppedImageUrl from "../services/image-url";
 import useGameQueryStore from "../store";
 
 const GenreList = () => {
-  const setGenreId = useGameQueryStore((s) => s.setGenreId);
   const genreId = useGameQueryStore((s) => s.gameQuery.genreId);
+  const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
 
   const { data, isLoading, error } = useGenres();
 
@@ -37,7 +37,7 @@ const GenreList = () => {
                 src={getCroppedImageUrl(genre.image_background)}
               />
               <Button
-                onClick={() => setGenreId(genre.id)}
+                onClick={() => setSelectedGenreId(genre.id)}
                 fontSize="lg"
                 variant="link"
                 fontWeight={genreId === genre.id ? "bold" : "normal"}
